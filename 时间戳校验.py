@@ -2,7 +2,7 @@ import time
 
 def timeStr_to_time(time_str, structure="年/月/日-时:分:秒"):
 
-    dict_ = {
+    structure_dict = {
         '年':'%Y',
         '月':'%m',
         '日':'%d',
@@ -11,16 +11,16 @@ def timeStr_to_time(time_str, structure="年/月/日-时:分:秒"):
         '秒':'%S'
     }
 
-    keys = dict_.keys()
+    keys = structure_dict.keys()
 
-    str_ = ''
+    structure_str = ''
     for i in structure:
         if i in keys:
-            str_ += dict_[i]
+            structure_str += structure_dict[i]
         else:
-            str_ += i
+            structure_str += i
 
-    return time.mktime(time.strptime(time_str, str_))
+    return time.mktime(time.strptime(time_str, structure_str))
 
 if (time.time() <= timeStr_to_time('2026/6/7-23:59:59')):
     pass
