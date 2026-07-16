@@ -22,5 +22,5 @@ def timeStr_to_time(time_str, structure="年/月/日-时:分:秒"):
 
     return time.mktime(time.strptime(time_str, structure_str))
 
-if (time.time() <= timeStr_to_time('2026/6/7-23:59:59')):
+if (time.time() <= timeStr_to_time('年/月/日-时:分:秒')):
     pass
