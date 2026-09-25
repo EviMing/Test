@@ -15,7 +15,7 @@ import aiohttp
 import aiofiles
 
 #[定义函数] 同步实现
-def request_sync(
+def request(
     url:str,
     headers:dict,
     file_path:str,
@@ -61,7 +61,7 @@ def request_sync(
             continue
 
 #[定义函数] 异步实现
-async def request_async(
+async def async_request(
     url: str,
     headers: dict,
     file_path: str,
